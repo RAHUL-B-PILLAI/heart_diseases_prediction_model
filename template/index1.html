@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <style>
+	body {
+	  font-family: Arial, Helvetica, sans-serif;
+	}
+	.hero{
+	color:red;
+	height: 100vh;
+	background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),url({{ url_for('static', filename='image/background.jpg')}});
+	background position: centre;
+	background-size: cover;
+	overflow-x: hidden;
+	position: relative;
+	}
+	.blackbox{
+	width:320px;
+	height:620px;
+	background:#000;
+	color:#fff;
+	top:10%;
+	left:37%;
+	position:absolute;
+	transfrom:translate(-50%,-50%);
+	box-sizing:border-box;
+	padding:70px 30px;
+
+
+	}
+	.blackbox p{
+	margin:0;
+	padding:0;
+	font-weight:bold;
+	}
+	.blackbox input{
+	width:100%;
+	margin-bottom:20px;
+	}
+	.blackbox input[type="text"]
+	{
+	border:none;
+	border-bottom:1px solid #fff;
+	background:transparent;
+	outline:none;
+	height:20px;
+	color:#fff;
+	font-size:16px;
+	
+	}
+	.blackbox button[type="submit"]
+	{
+	border:none;
+	outline:none;
+	background:#fb2525;
+	color:#fff;
+	width:100px;
+	font-size:18px;
+	border-radius:20px;
+	}
+	.navbar {
+	  overflow: hidden;
+	  background-color: rgb(51, 51, 51);
+	}
+	
+	.navbar a {
+	  float: left;
+	  font-size: 16px;
+	  color: white;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	}
+	
+	.dropdown {
+	  float: left;
+	  overflow: hidden;
+	}
+	
+	.dropdown .dropbtn {
+	  font-size: 16px;  
+	  border: none;
+	  outline: none;
+	  color: white;
+	  padding: 14px 16px;
+	  background-color: inherit;
+	  font-family: inherit;
+	  margin: 0;
+	}
+	
+	.navbar a:hover, .dropdown:hover .dropbtn {
+	  background-color: red;
+	}
+	
+	.dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: #f9f9f9;
+	  min-width: 160px;
+	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	  z-index: 1;
+	}
+	
+	.dropdown-content a {
+	  float: none;
+	  color: black;
+	  padding: 12px 16px;
+	  text-decoration: none;
+	  display: block;
+	  text-align: left;
+	}
+	
+	.dropdown-content a:hover {
+	  background-color: #ddd;
+	}
+	
+	.dropdown:hover .dropdown-content {
+	  display: block;
+	}
+
+	select {
+  width: 100%;
+  padding: 5px 0px;
+  border: none;
+  border-radius: 8px;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+}
+	input {
+  width: 85%;
+  padding: 5px -1px;
+  border: none;
+  border-radius: 5px;
+  
+}
+
+	</style>
+	</head>
+
+
+<body>
+	<div class="navbar">
+		<a href="{{ url_for('home')}}">Home</a>
+		<a href="#news">News</a>
+		<div class="dropdown">
+		  <button class="dropbtn">Know Your Status
+			<i class="fa fa-caret-down"></i>
+		  </button>
+		  <div class="dropdown-content">
+			<a href="{{ url_for('quickpage')}}">Quick</a>
+			<a href="{{ url_for('advancedpage')}}">Advanced</a>
+		  </div>
+		</div> 
+	</div>
+<div class="hero">
+	<center><h1>QUICK DIAGNOSIS</h1>
+		<br><br>
+		<div class="blackbox">
+			<form action="{{ url_for('quick')}}"method="POST">
+			<br>
+			<select name="sex" id="sex" required="required">
+					
+				<option value="" disabled selected>Sex</option>
+				<option value="1">&#9794 Male</option>
+				<option value="0">&#9792 Female</option>
+			
+			</select>
+			<br><br>
+
+			<input type="text" name="age" placeholder="Age" required="required" /><br>
+
+			<select name="currentSmoker" id="currentSmoker" required="required">
+						
+				<option value="" disabled selected>Do you smoke?</option>
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+				
+			</select>
+			<br><br>
+
+			<input type="text" name="cigsPerDay" placeholder="Cig_per_Day &#128684" required="required" /><br>
+
+			<select name="BPMeds" id="BPMeds" required="required">
+					
+				<option value="" disabled selected>Do you consume BP meds?</option>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+			
+			</select>
+			<br><br>
+
+			<select name="prevalentStroke" id="prevalentStroke" required="required">
+					
+				<option value="" disabled selected>Previous history of Stroke?</option>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+			
+			</select>
+			<br><br>
+
+			<select name="prevalentHyp" id="prevalentHyp" required="required">
+					
+				<option value="" disabled selected>Previous history of Hypertension?</option>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+			
+			</select>
+			<br><br>
+			
+			<select name="diabetes" id="diabetes" required="required">
+					
+				<option value="" disabled selected>Do you have diabetes?</option>
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+				</select>
+			<br><br>
+			<input type="text" name="height" placeholder="Height in cm" required="required" /><br>
+			<input type="text" name="weight" placeholder="Weight in kg" required="required" /><br>
+			<input type="text" name="heartRate" placeholder="heartRate" required="required" /><br>
+			<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+			</form>
+			<br>
+			{{ prediction_text1 }}
+		</div>
+	</center>
+</div>
+</body>
+</html>

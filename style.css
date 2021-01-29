@@ -1,0 +1,186 @@
+ *{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+.hero{
+	height: 100vh;
+	background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),url(background.jpg);
+	background position: centre;
+	background-size: cover;
+	overflow-x: hidden;
+	position: relative;
+
+}
+.nav-bar{
+	display: flex;
+	padding: 13px 120px;
+}
+.nav-logo img{
+	color:#fff;
+	width: 50px;
+	height:50px;
+	padding: 8px 20px;
+	font-size: 13px;
+	font-weight: bold;
+	color:#fff;
+}
+.nav-logo a{
+	color:#fff;
+	text-decoration:none;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 10px 20px;
+	
+}
+.nav-links{
+	flex: 1; 
+}
+.nav-links ul{
+	margin-left: 10px;
+	display: inline;
+}
+.nav-links ul li{
+	list-style: none;
+	display: inline-block;
+}
+.nav-links ul a{
+	color:#fff;
+	text-decoration:none;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 13px 20px;
+}
+.nav-links ul li::after{
+	content:'';
+	width:0;
+	height:2px;
+	background:yellow;
+	display:block;
+	margin:auto;
+	transition:.2s;
+}
+.nav-links ul li:hover::after{
+	width:50%;
+}
+.sign-in{
+	color:yellow;
+	float:right;
+	padding: 13px 20px;
+}
+.sign-in::after{
+	content:'';
+	width:0;
+	height:1px;
+	background:yellow;
+	display:block;
+	margin:auto;
+	transition:.2s;	
+}
+.sign-in:hover::after{
+	width:50%;
+}
+.nav-links  a{
+	color:#FEA;
+	text-decoration:none;
+	font-size: 13px;
+	font-weight: bold;
+	display: inline-block;
+	
+}
+.home-banner {
+	margin:80px 180px;
+	color:#fff;
+}
+.home-banner h1{
+	font-size:64px;
+	margin-bottom:30px;
+}
+.home-banner h1 span{
+	color:red;
+}
+@media (max-width:700px){
+	.home-banner{
+		margin:80px 40px;
+	}
+	.home-banner h1{
+		font-size:50px;
+	}
+	.nav-bar{
+		padding:10px 30px;
+	}
+	.fa-bars{
+	position:absolute;
+	right:20px;
+	top:10px;
+	}	
+	.nav-bar .fa{
+	display:block;
+	color;#fff;
+	margin:10px 25px;
+	font-size:22px;
+	cursor:pointer;
+	}
+	.nav-links{
+	height:100vh;
+	width:200px;
+	background:#000;
+	top:0;
+	position:absolute;
+	text-align:left;
+	z-index:2;
+	}
+	.nav-links ul a{
+	display:block;
+	}
+}
+
+
+
+.sign-in-box{
+	width:320px;
+	height:420px;
+	background:#000;
+	color:#fff;
+	top:25%;
+	left:40%;
+	position:absolute;
+	transfrom:translate(-50%,-50%);
+	box-sizing:border-box;
+	padding:70px 30px;
+}
+h1{
+	margin:0;
+	padding:0 0 20px;
+	text-align:center;
+	font-size:22px;
+}
+.sign-in-box p{
+	margin:0;
+	padding:0;
+	font-weight:bold;
+}
+.sign-in-box input{
+	width:100%;
+	margin-bottom:20px;
+}
+.sign-in-box input[type="text"],input[type="password"]
+{
+	border:none;
+	border-bottom:1px solid #fff;
+	background:transparent;
+	outline:none;
+	height:40px;
+	color:#fff;
+	font-size:16px;
+	
+}
+.sign-in-box input[type="submit"]
+{
+	border:none;
+	outline:none;
+	background:#fb2525;
+	color:#fff;
+	font-size:18px;
+	border-radius:20px;
+}
