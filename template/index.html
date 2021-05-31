@@ -135,7 +135,7 @@
 <body>
 	<div class="navbar">
 		<a href="{{ url_for('home')}}">Home</a>
-		<a href="#news">News</a>
+		<a href="{{ url_for('newspage')}}">News</a>
 		<div class="dropdown">
 		  <button class="dropbtn">Know Your Status
 			<i class="fa fa-caret-down"></i>
@@ -167,10 +167,10 @@
 		<br><br>
 		<select name="cp" id="cp" required="required">
 			<option value="" disabled selected>Chest pain</option>
-			<option value="1">typical angina</option>
-		  <option value="2">atypical angina</option>
-		  <option value="3">non-angina pain</option>
-		  <option value="4">asymtomatic</option>
+			<option value="0">typical angina</option>
+		  <option value="1">atypical angina</option>
+		  <option value="2">non-angina pain</option>
+		  <option value="3">asymtomatic</option>
 		</select>
 		<br><br>
 		<input type="text" name="trestbps" placeholder="Resting Blood Pressure" required="required" /><br><br>
@@ -200,9 +200,9 @@
 		<input type="text" name="oldpeak" placeholder="oldpeak" required="required" /><br><br>
 		<select name="slope" id="slope"  required="required">
 			<option value="" disabled selected>Slope</option>
-			<option value="1">Upsloping</option>
-			<option value="2">Flat</option>
-			<option value="3">Downsloping </option>
+			<option value="0">Upsloping</option>
+			<option value="1">Flat</option>
+			<option value="2">Downsloping </option>
 		  </select>
 		<br><br>
 		<select name="ca" id="ca" required="required">
@@ -213,12 +213,7 @@
 			<option value="3">3</option>
 		  </select>
 		  <br><br>
-		<select name="thal" id="thal" required="required">
-			<option value="" disabled selected>Thal</option>
-			<option value="3">Normal</option>
-			<option value="6">Fixed defect</option>
-			<option value="7">Reversable defect</option>
-		  </select>
+		  <input type="text" name="thal" placeholder="thal(normal(0-3),fixed defect(4-6),revesible defect(7))" required="required" />
 		<br>
 		<br>
 			<button type="submit">Predict</button>

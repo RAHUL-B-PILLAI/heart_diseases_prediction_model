@@ -11,6 +11,9 @@ def homepage():
 @app.route('/advancedpage')
 def advancedpage():    
     return render_template('index.html')
+@app.route('/newspage')
+def newspage():
+	return render_template('News.html')
 @app.route('/quick',methods=['POST'])
 def quick():
 	def bmi(height,weight):
@@ -36,12 +39,12 @@ def quick():
 		smoking="Yes"
 	else:
 		smoking="No"
-	if int(int_features1[4])==1.0:
+	if int(int_features1[5])==1.0:
 		stroke="Yes"
 	else:
 		stroke="No"
 
-	if int(int_features1[5])==1.0:
+	if int(int_features1[6])==1.0:
 		hyp="Yes"
 	else:
 		hyp="No"
@@ -49,7 +52,7 @@ def quick():
 		dia="Yes"
 	else:
 		dia="No"
-	if int(int_features1[6])==1.0:
+	if int(int_features1[4])==1.0:
 		bpmeds="Yes"
 	else:
 		bpmeds="No"
@@ -73,7 +76,7 @@ def home():
 
 @app.route('/advanced',methods=['POST'])
 def advanced():
-	int_features2 = [int(x) for x in request.form.values()]
+	int_features2 = [float(x) for x in request.form.values()]
 	final2_feature=[np.array(int_features2)]
 	prediction2= model2.predict(final2_feature)
 	result=prediction2[0]
@@ -81,7 +84,8 @@ def advanced():
 	age=int_features2[0]
 	trestbps=int_features2[3]
 	chol=int_features2[4]
-	oldspeak=int_features2[7]
+	oldspeak=int_features2[9]
+	ca=int_features2[11]
 	thalach=int_features2[7]
 	ca=int_features2[10]
 
@@ -90,11 +94,11 @@ def advanced():
 	else:
 		sex="Female"
 	
-	if int(int_features2[2])==1:
+	if int(int_features2[2])==0:
 		cp="Typical angina"
-	elif int(int_features2[2])==2:
+	elif int(int_features2[2])==1:
 		cp="Atypical angina"
-	elif int(int_features2[2])==3:
+	elif int(int_features2[2])==2:
 		cp="Non-angina pain"
 	else:
 		cp="Asymtomatic"
@@ -117,16 +121,16 @@ def advanced():
 	else:
 		exang="No"
 		
-	if int(int_features2[9])==1:
+	if int(int_features2[10])==0:
 		slope="upsloping"
-	elif int(int_features2[9])==2:
+	elif int(int_features2[10])==1:
 		slope="flat"
 	else:
 		slope="downsloping"
 	
-	if int(int_features2[11])==3:
+	if int(int_features2[12]<=3):
 		thal="Normal"
-	elif int(int_features2[11])==6:
+	elif int(int_features2[12]<=6):
 		thal="Fixed defect"
 	else:
 		thal=" reversable defect"
