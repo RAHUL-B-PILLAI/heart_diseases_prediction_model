@@ -8,22 +8,31 @@ body {
 }
 .home-banner {
 	color:#fff;
-	background position:centre;
+  padding-left: 2%;
+  padding-right: 1%;
+  text-align: left;
+	background-position:center;
 	background-size:cover;
 	overflow-x:hidden;
 	position:relative;
+  text-shadow: 10mm;
+  font-family: 'Times New Roman', Times, serif;
+  
 }
 .home-banner h1{
+  padding-top: 1.5%;
+  text-align: center;
 	font-size:64px;
 	margin-bottom:30px;
 	color:red;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .hero{
 	color:red;
 	height: 100vh;
-	background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),url({{ url_for('static', filename='image/background.jpg')}});
-	background position:centre;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.897),rgba(0, 0, 0, 0.931)),url({{ url_for('static', filename='image/background.jpg')}});
+	background-position:center;
 	background-size:cover;
 	overflow-x:hidden;
 	position:relative;
@@ -46,7 +55,6 @@ body {
   float: left;
   overflow: hidden;
 }
-
 .dropdown .dropbtn {
   font-size: 16px;  
   border: none;
@@ -87,6 +95,91 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.container {
+  padding-top: 2%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: #fff;
+  background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(206, 5, 5, 0.945));
+}
+.lead { font-family: 'Quicksand'; }
+.header-bar {
+	position: relative;
+	width: 50%;
+	min-width: 300px;
+	height: 50px;
+	border: 10px solid transparent;
+	border-top: 10px solid #fffa;
+	border-left: 10px solid #fffa;
+	box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25) inset;
+}
+.header-bar::after {
+	content: '';
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 30%;
+	height: 49px;
+	border: 10px solid transparent;
+	border-bottom: 10px solid #fffa;
+	border-right: 10px solid #fffa;
+	transition: 0.3s linear all;
+}
+.header-bar > .logo {
+	position: absolute;
+	top: calc(35% - 20px);
+	left: 10px;
+	transform: translateY(-50%);
+	color: #fffc;
+	font-family: 'Parisienne', cursive;
+	cursor: default;
+	user-select: none;
+  background-image: url('/static/image/logo.png');
+}
+.slider-menu {
+  padding-top: 1%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	z-index: 1;
+}
+.slider-menu > li {
+	display: inline-flex;
+	padding: 15px;
+	margin-left: 2px;
+	font-family: 'Quicksand', sans-serif;
+	color: #fff;
+	
+	transition: 0.3s linear all;
+	user-select: none;
+}
+.slider-menu > li:hover {
+	color: #faa;
+	box-shadow: 0 50px 5px rgba(0, 0, 0, 0.87) inset;
+}
+.aeu-signature {
+	position: fixed;
+	top: 5px;
+	left: 50%;
+	transform: translate(-50%);
+	font-size: 15px;
+	line-height: 30px;
+	background-color: #fff;
+	padding: 5px 10px;
+	border-radius: 25px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+.aeu-signature { font-family: "Quicksand"; }
+.aeu-signature > img { height: 30px; }
+
+
 </style>
 </head>
 <body>
@@ -105,12 +198,42 @@ body {
   </div> 
 </div>
 <div class="hero">
+<div class="home-banner h1">
+<h1>HEART RATE ANALYZER</h1>
+</div>
 <div class="home-banner">
-<h1>HEART DISEASE PREDICTION</h1>
 <p>Heart disease is the leading cause of death in the United States, according to the Centers for Disease Control and Prevention (CDC) . In the United States, 1 in every 4 deaths in is the result of a heart disease. That's about 610,000 people who die from the condition each year. Heart disease doesn't discriminate.
   Includes Diseases: Heart arrhythmia; Pericarditis...
   </p>
+  <p>
+    Amid the Covid-19 pandemic cardiac patients fail to get immediate treatments.Carrying
+out tests for cardiac issues during a crisis like pandemic is also very difficult.Unpredictable
+nature of cardiac disorders make it all the more difficult to diagnose. Common tests such
+as CT scan and ECG are expensive and are not affordable to everyone No Compact and
+portable heart monitoring devices The existing one’s are expensive.And our approach is to determine the heart attack possibility of a person with his/her
+medical condition using machine learning
+  </p>
+  <p>
+    The goal of this project is to make the diagnosing process easier by developing an effective machine learning model.
+    The project includes two models: one for quick diagnosis and one for advanced diagnostics.
+    Both models use a distinct set of inputs based on the requirements.
+  </p>
 </div>
+
 </div>
+
+<div class="container">
+	
+	<div class="header-bar">
+		<h1 class="logo">Team:</h1>
+		<ul class="slider-menu">
+			<li>Athira Rani S.P</li>
+			<li>Aiswarya Ravindranath</li>
+			<li>Sreejesh S Kumar</li>
+		</ul>
+	</div>
+  <p class="lead">Group 21 © 2021</p>
+</div>
+
 </body>
 </html>

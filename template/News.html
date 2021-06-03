@@ -27,9 +27,8 @@ body {
 }
 
 .hero{
-	color:red;
 	height: 100vh;
-	background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),url({{ url_for('static', filename='image/background.jpg')}});
+	background-image: linear-gradient(rgba(41, 1, 1, 0.746),rgba(0,0,0,0.6)),url({{ url_for('static', filename='image/background.jpg')}});
 	background-position:center;
 	background-size:cover;
 	overflow-x:hidden;
@@ -94,6 +93,23 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.image{
+padding-left: 25%;
+padding-top: 3%;
+
+}
+.container {
+  padding-top: 0%;
+	height: 5%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: #fff;
+  background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(206, 5, 5, 0.945));
+}
+
+.lead { font-family: 'Quicksand'; }
 </style>
 </head>
 <body>
@@ -111,9 +127,29 @@ body {
     </div>
   </div> 
 </div>
-<div>
-    
+<div class="hero">
+  <div class="image">
+    <a href="https://timesofindia.indiatimes.com/city/mumbai/mumbai-post-covid-stroke-heart-attack-on-the-rise/articleshow/83099719.cms" target = "_blank">
+    <img src="/static/News/News1.png">
+    </a>
 
-</div>
+    <a href="https://weather.com/en-IN/india/coronavirus/news/2021-05-28-coronavirus-increases-risk-of-heart-attack-in-individuals-with" target = "_blank">
+      <img src="/static/News/News2.png">
+    </a>
+
+    <a href="https://www.ucsf.edu/news/2021/05/420661/fetal-heart-defect-detection-improved-using-machine-learning" target = "_blank">
+      <img src="/static/News/News3.png">
+    </a>
+
+    <a href="https://www.eurekalert.org/pub_releases/2021-05/uoc--uif052521.php" target = "_blank">
+      <img src="/static/News/News4.png">
+    </a>
+  
+  </div>
+ 
+  <div class="container">
+  <p class="lead">Group 21 © 2021</p>
+  </div>
+  </div>
 </body>
 </html>
